@@ -1,0 +1,39 @@
+:root {
+    --bg-color: #F4F4F4;
+    --text-main: #1A1A1A;
+    --border-thick: 4px solid #1A1A1A;
+    --font-stack: 'Public Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: var(--font-stack); background-color: var(--bg-color); color: var(--text-main); height: 100vh; overflow: hidden; }
+.layout { display: grid; grid-template-columns: 380px 1fr; height: 100vh; }
+
+/* Sidebar */
+.sidebar { background: #FFFFFF; border-right: var(--border-thick); display: flex; flex-direction: column; padding: 2rem; z-index: 1000; }
+.logo-area { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.roundel { width: 40px; height: 40px; border: 6px solid #DC241F; border-radius: 50%; position: relative; }
+.roundel::after { content: ''; position: absolute; top: 50%; left: -20%; width: 140%; height: 6px; background: #0019A8; transform: translateY(-50%); }
+.logo-area h1 { font-weight: 900; font-size: 2.2rem; line-height: 0.9; letter-spacing: -1px; text-transform: uppercase; }
+
+.search-bar input { width: 100%; padding: 1rem; font-family: var(--font-stack); font-weight: 700; font-size: 1rem; border: var(--border-thick); outline: none; margin-bottom: 1.5rem; }
+.search-bar input:focus { background: #EAEAEA; }
+
+.zone-filters h3 { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.5rem; color: #666; }
+.zone-btn { display: block; width: 100%; text-align: left; padding: 0.75rem 1rem; margin-bottom: 0.5rem; font-family: var(--font-stack); font-weight: 700; font-size: 1rem; background: #FFF; border: 2px solid var(--text-main); color: var(--text-main); cursor: pointer; transition: all 0.2s; }
+.zone-btn:hover, .zone-btn.active { background: var(--zone-color); color: #FFF; border-color: var(--zone-color); }
+
+/* Directory List */
+.venue-list { flex-grow: 1; overflow-y: auto; margin-top: 1.5rem; border-top: 2px solid #EAEAEA; padding-top: 1rem; }
+.venue-card { padding: 1rem; border: 2px solid #EAEAEA; margin-bottom: 0.5rem; cursor: pointer; transition: all 0.2s; border-left: 8px solid var(--card-color); }
+.venue-card:hover { border-color: var(--text-main); background: #F9F9F9; }
+.venue-card h4 { font-size: 1.1rem; font-weight: 900; margin-bottom: 0.25rem; }
+.venue-card p { font-size: 0.85rem; color: #666; }
+
+.status-board { border-top: var(--border-thick); padding-top: 1rem; margin-top: 1rem; font-size: 0.85rem; letter-spacing: 1px; }
+.map-container { height: 100vh; width: 100%; background: #E5E5E5; }
+
+/* Custom Leaflet Map Tooltip */
+.leaflet-popup-content-wrapper { border-radius: 0; border: 3px solid #000; box-shadow: 4px 4px 0 rgba(0,0,0,1); font-family: var(--font-stack); }
+.leaflet-popup-content { font-weight: 700; font-size: 1.1rem; text-align: center; margin: 10px; }
