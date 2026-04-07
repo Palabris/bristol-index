@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE BRISTOL INDEX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <header class="logo-area">
+                <div class="roundel"></div>
+                <h1>BRISTOL<br>INDEX</h1>
+            </header>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search station or venue...">
+            </div>
+
+            <nav class="zone-filters" id="zoneFilters">
+                <h3>SELECT ZONE</h3>
+                <button class="zone-btn active" data-zone="all" style="--zone-color: #1A1A1A;">ALL ZONES</button>
+                <button class="zone-btn" data-zone="clifton" style="--zone-color: #0019A8;">Clifton</button>
+                <button class="zone-btn" data-zone="gloucester" style="--zone-color: #007D32;">Gloucester Rd</button>
+                <button class="zone-btn" data-zone="easton" style="--zone-color: #9B0058;">Easton</button>
+                <button class="zone-btn" data-zone="bedminster" style="--zone-color: #FFD329; color: #000;">Bedminster</button>
+                <button class="zone-btn" data-zone="centre" style="--zone-color: #DC241F;">City Centre</button>
+            </nav>
+
+            <div id="venueList" class="venue-list">
+                </div>
+            
+            <div class="status-board">
+                <p>SYSTEM STATUS: <strong>GOOD SERVICE</strong></p>
+            </div>
+        </aside>
+        <main id="map" class="map-container"></main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
